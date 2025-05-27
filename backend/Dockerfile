@@ -4,5 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+RUN mkdir -p /app/data
+COPY db.json /app/data/db.json
 EXPOSE 5000
-CMD ["npx", "json-server", "--host", "0.0.0.0", "--watch", "db.json", "--port", "5000"]
+CMD ["npx", "json-server", "--host", "0.0.0.0", "--watch", "data/db.json", "--port", "5000"]
