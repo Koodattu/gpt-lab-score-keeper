@@ -1,0 +1,224 @@
+{
+  "participants": [
+    {
+      "id": 1,
+      "name": "Pekka Abrahamsson"
+    },
+    {
+      "id": 2,
+      "name": "Niklas Lavesson"
+    },
+    {
+      "id": 3,
+      "name": "Tony Gorschek"
+    },
+    {
+      "id": 4,
+      "name": "Jyrki Nummenmaa"
+    },
+    {
+      "id": 5,
+      "name": "Kai-Kristian Kemell"
+    },
+    {
+      "id": 6,
+      "name": "Jussi Rasku"
+    },
+    {
+      "id": 7,
+      "name": "Mika Saari"
+    },
+    {
+      "id": 8,
+      "name": "Muhammad Waseem"
+    },
+    {
+      "id": 9,
+      "name": "Jari Soini"
+    },
+    {
+      "id": 10,
+      "name": "Vaishnavi Bankhele"
+    },
+    {
+      "id": 11,
+      "name": "Chalisa Veesommai Sillberg"
+    },
+    {
+      "id": 12,
+      "name": "Janne Harjamäki"
+    },
+    {
+      "id": 13,
+      "name": "Zheying Zhang"
+    },
+    {
+      "id": 14,
+      "name": "Anna Eriksson"
+    },
+    {
+      "id": 15,
+      "name": "Mikko Nurminen"
+    },
+    {
+      "id": 16,
+      "name": "Pekka Sillberg"
+    },
+    {
+      "id": 17,
+      "name": "José Siqueira de Cerqueira"
+    },
+    {
+      "id": 18,
+      "name": "Zeeshan Rasheed"
+    },
+    {
+      "id": 19,
+      "name": "Malik Abdul Sami"
+    },
+    {
+      "id": 20,
+      "name": "Andrei Ahonen"
+    },
+    {
+      "id": 21,
+      "name": "Mahade Hasan"
+    },
+    {
+      "id": 22,
+      "name": "Shahbaz Siddeeq"
+    },
+    {
+      "id": 23,
+      "name": "Toufique Hasan"
+    },
+    {
+      "id": 24,
+      "name": "Petrus Jussila"
+    },
+    {
+      "id": 25,
+      "name": "Kari Sainio"
+    },
+    {
+      "id": 26,
+      "name": "Tapio Honkonen"
+    },
+    {
+      "id": 27,
+      "name": "Mikko Auranen"
+    },
+    {
+      "id": 28,
+      "name": "Ayman Asad Khan"
+    },
+    {
+      "id": 29,
+      "name": "Juha Ala-Rantala"
+    },
+    {
+      "id": 30,
+      "name": "Nasir Shuvo"
+    },
+    {
+      "id": 31,
+      "name": "Joni Honkanen"
+    },
+    {
+      "id": 32,
+      "name": "Janika Ranta"
+    },
+    {
+      "id": 33,
+      "name": "Md Aidul Islam"
+    },
+    {
+      "id": 34,
+      "name": "Riku Laine"
+    },
+    {
+      "id": 35,
+      "name": "Sachini Hewage (Sasha)"
+    },
+    {
+      "id": 36,
+      "name": "Thinh Kieu"
+    },
+    {
+      "id": 37,
+      "name": "Petri Rantanen"
+    }
+  ],
+  "teams": [
+    {
+      "id": "0ef9",
+      "name": "test",
+      "members": [1, 3, 2]
+    }
+  ],
+  "scores": [
+    {
+      "id": "2f3c",
+      "participantId": 1,
+      "sport": "Stick Javelin",
+      "points": 3
+    },
+    {
+      "id": "c982",
+      "participantId": 1,
+      "sport": "Brown Water Swim",
+      "points": 1
+    },
+    {
+      "id": "0f5e",
+      "participantId": 1,
+      "sport": "Vase Arrangement",
+      "points": 1
+    },
+    {
+      "id": "a4e3",
+      "participantId": 2,
+      "sport": "Vase Arrangement",
+      "points": 1
+    },
+    {
+      "id": "c27e",
+      "participantId": 3,
+      "sport": "Vase Arrangement",
+      "points": 1
+    },
+    {
+      "id": "b037",
+      "participantId": 4,
+      "sport": "Vase Arrangement",
+      "points": 1
+    },
+    {
+      "id": "38a4",
+      "participantId": 2,
+      "sport": "Frisbee Putting",
+      "points": 2
+    },
+    {
+      "id": "c7a3",
+      "participantId": 3,
+      "sport": "Frisbee Putting",
+      "points": 2
+    },
+    {
+      "id": "2c29",
+      "participantId": 7,
+      "sport": "Frisbee Putting",
+      "points": 2
+    },
+    {
+      "id": "de17",
+      "participantId": 1,
+      "sport": "Frisbee Putting",
+      "points": 1
+    }
+  ],
+  "admin": {
+    "pin": "60150"
+  }
+}

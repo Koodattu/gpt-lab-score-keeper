@@ -1,0 +1,46 @@
+/* Mobile-first styling for the Score Keeper app */
+
+/* Remove root styling that conflicts with MUI */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom mobile optimizations */
+@media (max-width: 600px) {
+  /* Ensure full width on mobile */
+  .MuiContainer-root {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Optimize tab spacing on mobile */
+  .MuiTabs-root {
+    min-height: 40px !important;
+  }
+
+  .MuiTab-root {
+    min-height: 40px !important;
+    padding: 6px 8px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Optimize list items for mobile */
+  .MuiListItem-root {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* Better button sizing for mobile */
+  .MuiButton-root {
+    min-width: 64px !important;
+    padding: 8px 16px !important;
+  }
+
+  /* Better text field sizing */
+  .MuiTextField-root {
+    margin: 4px !important;
+  }
+}
