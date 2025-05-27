@@ -10,7 +10,10 @@ services:
   backend:
     build: ./backend
     ports:
-      - "5500:5000" # Changed host port to 5500, container port remains 5000
+      - "5500:5000"
     volumes:
-      - ./backend/db.json:/app/db.json
+      - scorekeeper-db:/app/db.json
     restart: unless-stopped
+
+volumes:
+  scorekeeper-db:
