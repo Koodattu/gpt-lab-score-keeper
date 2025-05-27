@@ -42,7 +42,7 @@ export default function Scoring() {
         sx={{
           flex: 1,
           overflow: "auto",
-          p: { xs: 2, sm: 3 },
+          p: { xs: 0.5, sm: 3 },
         }}
       >
         <ScoreBoard sport={sports[tab]} />

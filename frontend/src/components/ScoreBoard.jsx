@@ -59,7 +59,7 @@ export default function ScoreBoard({ sport }) {
 
   const filtered = participants.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
   return (
-    <Box sx={{ width: "100%", px: { xs: 1, sm: 2 } }}>
+    <Box sx={{ width: "100%", px: { xs: 0, sm: 1 } }}>
       <TextField
         label="Search participants"
         value={search}
@@ -87,15 +87,15 @@ export default function ScoreBoard({ sport }) {
               flexDirection: { xs: "column", sm: "row" },
               alignItems: { xs: "stretch", sm: "center" },
               gap: { xs: 2, sm: 0 },
-              p: { xs: 2, sm: 1 },
+              p: { xs: 1, sm: 1 },
             }}
             secondaryAction={
               <Box
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: { xs: 2, sm: 1 },
-                  mt: { xs: 1, sm: 0 },
+                  gap: { xs: 0, sm: 1 },
+                  mt: { xs: 0, sm: 0 },
                   alignSelf: { xs: "center", sm: "flex-end" },
                 }}
               >
@@ -106,8 +106,8 @@ export default function ScoreBoard({ sport }) {
                     bgcolor: "error.main",
                     color: "white",
                     "&:hover": { bgcolor: "error.dark" },
-                    width: { xs: 48, sm: 40 },
-                    height: { xs: 48, sm: 40 },
+                    width: { xs: 40, sm: 40 },
+                    height: { xs: 40, sm: 40 },
                   }}
                 >
                   <RemoveIcon sx={{ fontSize: { xs: 28, sm: 24 } }} />
@@ -115,7 +115,7 @@ export default function ScoreBoard({ sport }) {
                 <Typography
                   sx={{
                     mx: { xs: 2, sm: 1 },
-                    minWidth: { xs: 48, sm: 32 },
+                    minWidth: { xs: 32, sm: 32 },
                     display: "inline-block",
                     textAlign: "center",
                     fontSize: { xs: 24, sm: 20 },
@@ -132,8 +132,8 @@ export default function ScoreBoard({ sport }) {
                     bgcolor: "success.main",
                     color: "white",
                     "&:hover": { bgcolor: "success.dark" },
-                    width: { xs: 48, sm: 40 },
-                    height: { xs: 48, sm: 40 },
+                    width: { xs: 40, sm: 40 },
+                    height: { xs: 40, sm: 40 },
                   }}
                 >
                   <AddIcon sx={{ fontSize: { xs: 28, sm: 24 } }} />
@@ -143,7 +143,7 @@ export default function ScoreBoard({ sport }) {
           >
             <ListItemText
               sx={{ mr: { xs: 0, sm: 16 } }}
-              primary={<Typography sx={{ fontSize: { xs: 18, sm: 16 }, fontWeight: 500 }}>{p.name}</Typography>}
+              primary={<Typography sx={{ fontSize: { xs: 16, sm: 16 }, fontWeight: 500 }}>{p.name}</Typography>}
             />
           </ListItem>
         ))}
