@@ -146,7 +146,7 @@ export default function FormTeams() {
             minWidth: { xs: "100%", sm: "auto" },
           }}
         >
-          Add Team
+          Add
         </Button>
       </Box>{" "}
       <List sx={{ width: "100%", maxWidth: "100%" }}>

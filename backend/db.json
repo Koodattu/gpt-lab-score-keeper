@@ -149,75 +149,8 @@
       "name": "Petri Rantanen"
     }
   ],
-  "teams": [
-    {
-      "id": "0ef9",
-      "name": "test",
-      "members": [1, 3, 2]
-    }
-  ],
-  "scores": [
-    {
-      "id": "2f3c",
-      "participantId": 1,
-      "sport": "Stick Javelin",
-      "points": 3
-    },
-    {
-      "id": "c982",
-      "participantId": 1,
-      "sport": "Brown Water Swim",
-      "points": 1
-    },
-    {
-      "id": "0f5e",
-      "participantId": 1,
-      "sport": "Vase Arrangement",
-      "points": 1
-    },
-    {
-      "id": "a4e3",
-      "participantId": 2,
-      "sport": "Vase Arrangement",
-      "points": 1
-    },
-    {
-      "id": "c27e",
-      "participantId": 3,
-      "sport": "Vase Arrangement",
-      "points": 1
-    },
-    {
-      "id": "b037",
-      "participantId": 4,
-      "sport": "Vase Arrangement",
-      "points": 1
-    },
-    {
-      "id": "38a4",
-      "participantId": 2,
-      "sport": "Frisbee Putting",
-      "points": 2
-    },
-    {
-      "id": "c7a3",
-      "participantId": 3,
-      "sport": "Frisbee Putting",
-      "points": 2
-    },
-    {
-      "id": "2c29",
-      "participantId": 7,
-      "sport": "Frisbee Putting",
-      "points": 2
-    },
-    {
-      "id": "de17",
-      "participantId": 1,
-      "sport": "Frisbee Putting",
-      "points": 1
-    }
-  ],
+  "teams": [],
+  "scores": [],
   "admin": {
     "pin": "60150"
   }
