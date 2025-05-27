@@ -1,6 +1,6 @@
 // api.js
 // Simple API helper for json-server
-const API_URL = "/api";
+const API_URL = import.meta.env.DEV ? "http://localhost:3001" : "/api";
 
 const api = {
   async get(path) {

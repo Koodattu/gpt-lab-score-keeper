@@ -17,12 +17,13 @@ export default function App() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100vh",
+          height: "100vh",
           bgcolor: "background.default",
+          overflow: "hidden",
         }}
       >
-        {/* Top App Bar */}
-        <AppBar position="sticky" elevation={0}>
+        {/* Top App Bar - Fixed */}
+        <AppBar position="static" elevation={0}>
           <Toolbar sx={{ justifyContent: "center", minHeight: { xs: 56, sm: 64 } }}>
             <Typography
               variant="h5"
@@ -37,35 +38,38 @@ export default function App() {
           </Toolbar>
         </AppBar>
 
-        {/* Main Content Area */}
-        <Container
-          maxWidth="sm"
+        {/* Main Content Area - Flexible, takes remaining space */}
+        <Box
           sx={{
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            py: { xs: 1, sm: 2 },
+            overflow: "hidden",
             px: { xs: 1, sm: 2 },
+            py: { xs: 1, sm: 2 },
             pb: { xs: 8, sm: 9 }, // Account for bottom navigation
           }}
         >
-          <Box
+          <Container
+            maxWidth="sm"
             sx={{
               flex: 1,
+              display: "flex",
+              flexDirection: "column",
               bgcolor: "background.paper",
               borderRadius: { xs: 2, sm: 3 },
-              p: { xs: 2, sm: 3 },
               boxShadow: 2,
-              minHeight: "calc(100vh - 120px)",
+              overflow: "hidden",
+              p: 0,
             }}
           >
             {page === 0 && <Setup />}
             {page === 1 && <Scoring />}
             {page === 2 && <Leaderboard />}
-          </Box>
-        </Container>
+          </Container>
+        </Box>
 
-        {/* Bottom Navigation */}
+        {/* Bottom Navigation - Fixed */}
         <AppBarBottom value={page} onChange={(e, v) => setPage(v)} />
       </Box>
     </ThemeProvider>

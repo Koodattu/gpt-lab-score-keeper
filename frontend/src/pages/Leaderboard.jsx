@@ -8,7 +8,8 @@ import LeaderboardTeams from "../components/LeaderboardTeams";
 export default function Leaderboard() {
   const [tab, setTab] = useState(0);
   return (
-    <Box sx={{ width: "100%", height: "100%" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      {/* Fixed Tabs at top */}
       <Tabs
         value={tab}
         onChange={(_, v) => setTab(v)}
@@ -16,17 +17,20 @@ export default function Leaderboard() {
         sx={{
           borderBottom: 1,
           borderColor: "divider",
-          mb: { xs: 1, sm: 2 },
+          bgcolor: "background.paper",
+          flexShrink: 0,
         }}
       >
         <Tab label="Individuals" />
         <Tab label="Teams" />
       </Tabs>
+
+      {/* Scrollable Content Area */}
       <Box
         sx={{
-          mt: { xs: 1, sm: 2 },
-          px: { xs: 0, sm: 1 },
-          width: "100%",
+          flex: 1,
+          overflow: "auto",
+          p: { xs: 2, sm: 3 },
         }}
       >
         {tab === 0 && <LeaderboardIndividuals />}

@@ -21,7 +21,8 @@ export default function Setup() {
   };
 
   return (
-    <Box sx={{ width: "100%", height: "100%" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      {/* Fixed Tabs at top */}
       <Tabs
         value={tab}
         onChange={(_, v) => setTab(v)}
@@ -29,22 +30,26 @@ export default function Setup() {
         sx={{
           borderBottom: 1,
           borderColor: "divider",
-          mb: { xs: 1, sm: 2 },
+          bgcolor: "background.paper",
+          flexShrink: 0,
         }}
       >
         <Tab label="Add People" onClick={handleRequireAdmin} />
         <Tab label="Form Teams" onClick={handleRequireAdmin} />
       </Tabs>
+
+      {/* Scrollable Content Area */}
       <Box
         sx={{
-          mt: { xs: 1, sm: 2 },
-          px: { xs: 0, sm: 1 },
-          width: "100%",
+          flex: 1,
+          overflow: "auto",
+          p: { xs: 2, sm: 3 },
         }}
       >
         {tab === 0 && <AddPeople admin={admin} />}
         {tab === 1 && <FormTeams admin={admin} />}
       </Box>
+
       <PINDialog open={pinOpen} onClose={() => setPinOpen(false)} onSuccess={handlePinSuccess} />
     </Box>
   );
