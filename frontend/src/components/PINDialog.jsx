@@ -2,19 +2,28 @@
 // Modal dialog for admin PIN entry
 import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
+import api from "../api";
 
 export default function PINDialog({ open, onClose, onSuccess }) {
   const [pin, setPin] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = () => {
-    // For now, just check against a hardcoded PIN (1234)
-    if (pin === "1234") {
-      onSuccess();
-      setPin("");
-      setError("");
-    } else {
-      setError("Incorrect PIN. Please try again.");
+  const handleSubmit = async () => {
+    setLoading(true);
+    try {
+      const adminData = await api.get("/admin");
+      if (adminData && adminData.pin && pin === adminData.pin) {
+        onSuccess();
+        setPin("");
+        setError("");
+      } else {
+        setError("Incorrect PIN. Please try again.");
+      }
+    } catch {
+      setError("Error verifying PIN. Try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,6 +71,7 @@ export default function PINDialog({ open, onClose, onSuccess }) {
           size="medium"
           error={!!error}
           helperText={error}
+          disabled={loading}
           sx={{
             "& .MuiInputBase-input": {
               fontSize: { xs: 18, sm: 16 },
@@ -84,6 +94,7 @@ export default function PINDialog({ open, onClose, onSuccess }) {
             minWidth: { xs: "100%", sm: "auto" },
             order: { xs: 2, sm: 1 },
           }}
+          disabled={loading}
         >
           Cancel
         </Button>
@@ -95,6 +106,7 @@ export default function PINDialog({ open, onClose, onSuccess }) {
             minWidth: { xs: "100%", sm: "auto" },
             order: { xs: 1, sm: 2 },
           }}
+          disabled={loading}
         >
           Unlock Admin
         </Button>

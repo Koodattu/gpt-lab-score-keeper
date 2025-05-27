@@ -5,12 +5,15 @@ import { Box, Typography, IconButton, List, ListItem, ListItemText, TextField, S
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import api from "../api";
+import PINDialog from "./PINDialog";
 
 export default function ScoreBoard({ sport }) {
   const [participants, setParticipants] = useState([]);
   const [scores, setScores] = useState([]);
   const [search, setSearch] = useState("");
   const [snack, setSnack] = useState({ open: false, message: "", severity: "success" });
+  const [admin, setAdmin] = useState(() => localStorage.getItem("admin") === "1");
+  const [pinOpen, setPinOpen] = useState(false);
 
   useEffect(() => {
     api.get("/participants").then(setParticipants);
@@ -28,17 +31,30 @@ export default function ScoreBoard({ sport }) {
 
   const getScore = (pid) => scores.find((s) => s.participantId === pid)?.points || 0;
 
+  const requireAdmin = (action) => {
+    if (admin) return action();
+    setPinOpen(true);
+  };
+
   const handleScore = async (pid, delta) => {
-    let score = scores.find((s) => s.participantId === pid);
-    if (!score) {
-      const newScore = await api.post("/scores", { participantId: pid, sport, points: delta });
-      setScores([...scores, newScore]);
-      setSnack({ open: true, message: `Score set to ${delta}`, severity: "success" });
-    } else {
-      const updated = await api.patch(`/scores/${score.id}`, { points: score.points + delta });
-      setScores(scores.map((s) => (s.id === score.id ? updated : s)));
-      setSnack({ open: true, message: `Score updated: ${score.points + delta}`, severity: "success" });
-    }
+    requireAdmin(async () => {
+      let score = scores.find((s) => s.participantId === pid);
+      if (!score) {
+        const newScore = await api.post("/scores", { participantId: pid, sport, points: delta });
+        setScores([...scores, newScore]);
+        setSnack({ open: true, message: `Score set to ${delta}`, severity: "success" });
+      } else {
+        const updated = await api.patch(`/scores/${score.id}`, { points: score.points + delta });
+        setScores(scores.map((s) => (s.id === score.id ? updated : s)));
+        setSnack({ open: true, message: `Score updated: ${score.points + delta}`, severity: "success" });
+      }
+    });
+  };
+
+  const handlePinSuccess = () => {
+    setAdmin(true);
+    localStorage.setItem("admin", "1");
+    setPinOpen(false);
   };
 
   const filtered = participants.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
@@ -144,6 +160,7 @@ export default function ScoreBoard({ sport }) {
           {participants.length === 0 ? "No participants added yet." : "No participants found."}
         </Typography>
       )}
+      <PINDialog open={pinOpen} onClose={() => setPinOpen(false)} onSuccess={handlePinSuccess} />
       <Snackbar open={snack.open} autoHideDuration={1500} onClose={() => setSnack({ ...snack, open: false })}>
         <Alert severity={snack.severity} sx={{ width: "100%" }}>
           {snack.message}
