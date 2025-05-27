@@ -1,6 +1,6 @@
 // api.js
 // Simple API helper for json-server
-const API_URL = "http://localhost:3001";
+const API_URL = "/api";
 
 const api = {
   async get(path) {
