@@ -12,7 +12,7 @@ services:
     ports:
       - "5500:5000"
     volumes:
-      - scorekeeper-db:/app/data
+      - ./backend/data:/app/data
     restart: unless-stopped
 
 volumes:
