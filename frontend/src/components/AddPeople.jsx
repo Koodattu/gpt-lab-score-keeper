@@ -80,6 +80,9 @@ export default function AddPeople() {
     setPinOpen(false);
   };
 
+  // Sort participants alphabetically by name before rendering
+  const sortedParticipants = [...participants].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <Box sx={{ width: "100%" }}>
       <Box
@@ -121,7 +124,7 @@ export default function AddPeople() {
         </Button>
       </Box>
       <List sx={{ width: "100%", maxWidth: { xs: "100%", sm: 480 }, mx: "auto" }}>
-        {participants.map((p) => (
+        {sortedParticipants.map((p) => (
           <ListItem
             key={p.id}
             sx={{

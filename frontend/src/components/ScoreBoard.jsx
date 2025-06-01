@@ -58,6 +58,10 @@ export default function ScoreBoard({ sport }) {
   };
 
   const filtered = participants.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
+
+  // Sort filtered participants alphabetically by name before rendering
+  const sortedFiltered = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <Box sx={{ width: "100%", px: { xs: 0, sm: 1 } }}>
       <TextField
@@ -75,7 +79,7 @@ export default function ScoreBoard({ sport }) {
         inputProps={{ style: { fontSize: 16 } }}
       />
       <List sx={{ width: "100%", maxWidth: "100%" }}>
-        {filtered.map((p) => (
+        {sortedFiltered.map((p) => (
           <ListItem
             key={p.id}
             sx={{

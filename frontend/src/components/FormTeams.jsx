@@ -92,6 +92,12 @@ export default function FormTeams() {
   // Participants not yet assigned to any team
   const assignedIds = teams.flatMap((t) => t.members);
   const unassigned = participants.filter((p) => !assignedIds.includes(p.id));
+
+  // Sort teams and participants alphabetically
+  const sortedTeams = [...teams].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedParticipants = [...participants].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedUnassigned = [...unassigned].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <Box sx={{ width: "100%", px: { xs: 1, sm: 2 } }}>
       <Box
@@ -119,7 +125,7 @@ export default function FormTeams() {
         />
         <Autocomplete
           multiple
-          options={unassigned}
+          options={sortedUnassigned}
           getOptionLabel={(p) => p.name}
           value={selected}
           onChange={(_, v) => setSelected(v)}
@@ -150,7 +156,7 @@ export default function FormTeams() {
         </Button>
       </Box>{" "}
       <List sx={{ width: "100%", maxWidth: "100%" }}>
-        {teams.map((t) => (
+        {sortedTeams.map((t) => (
           <ListItem
             key={t.id}
             sx={{
@@ -228,7 +234,7 @@ export default function FormTeams() {
                 />
                 <Autocomplete
                   multiple
-                  options={participants}
+                  options={sortedParticipants}
                   getOptionLabel={(p) => p.name}
                   value={editMembers}
                   onChange={(_, v) => setEditMembers(v)}
