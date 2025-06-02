@@ -109,6 +109,12 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           minHeight: 48,
+          background: "background.paper",
+          borderBottom: "2px solid #424242",
+          borderRadius: 0,
+          boxShadow: "none",
+          position: "relative",
+          zIndex: 2,
           "@media (max-width:600px)": {
             minHeight: 40,
           },
@@ -116,6 +122,8 @@ const theme = createTheme({
         indicator: {
           backgroundColor: "#90caf9",
           height: 3,
+          borderRadius: 2,
+          boxShadow: "none",
         },
       },
     },
@@ -123,14 +131,30 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           minHeight: 48,
-          padding: "6px 16px",
-          fontSize: "0.875rem",
+          padding: "8px 16px",
+          fontSize: "1rem",
+          fontWeight: 600,
           textTransform: "none",
+          letterSpacing: 0.5,
+          borderRadius: 6,
+          margin: "0 2px",
+          color: "#b3b3b3",
+          background: "none",
+          transition: "background 0.2s, color 0.2s",
+          "&.Mui-selected": {
+            background: "rgba(144,202,249,0.12)",
+            color: "#90caf9",
+            boxShadow: "none",
+          },
+          "&:hover": {
+            background: "rgba(144,202,249,0.08)",
+            color: "#90caf9",
+          },
           "@media (max-width:600px)": {
             minHeight: 40,
             padding: "6px 8px",
-            fontSize: "0.8rem",
-            minWidth: "auto",
+            fontSize: "0.92rem",
+            borderRadius: 4,
           },
         },
       },
