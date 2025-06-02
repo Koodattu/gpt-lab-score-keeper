@@ -4,7 +4,15 @@ import { Box, Tabs, Tab } from "@mui/material";
 import { useState } from "react";
 import ScoreBoard from "../components/ScoreBoard";
 
-const sports = ["Stick Javelin", "Mölkky/Hutunkeitto", "Brown Water Swim", "Frisbee Putting", "Vase Arrangement"];
+const sports = [
+  "Stick Javelin",
+  "Mölkky",
+  "Hutunkeitto",
+  "Brown Water Swim",
+  "Frisbee Putting",
+  "Vase Arrangement",
+  "Tractor/Trailer Reversing",
+];
 
 export default function Scoring() {
   const [tab, setTab] = useState(0);

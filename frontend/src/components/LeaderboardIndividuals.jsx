@@ -4,7 +4,15 @@ import { useState, useEffect } from "react";
 import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
 import api from "../api";
 
-const sports = ["Stick Javelin", "Mölkky/Hutunkeitto", "Brown Water Swim", "Frisbee Putting", "Vase Arrangement"];
+const sports = [
+  "Stick Javelin",
+  "Mölkky",
+  "Hutunkeitto",
+  "Brown Water Swim",
+  "Frisbee Putting",
+  "Vase Arrangement",
+  "Tractor/Trailer Reversing",
+];
 
 export default function LeaderboardIndividuals() {
   const [participants, setParticipants] = useState([]);

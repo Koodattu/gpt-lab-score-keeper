@@ -173,3 +173,4 @@ export default function ScoreBoard({ sport }) {
     </Box>
   );
 }
+// Update sports list if hardcoded, and ensure scoring logic uses the updated list from props or context if needed.
